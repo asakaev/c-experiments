@@ -21,17 +21,13 @@ int main() {
   while (c != '.') {
     c = getchar();
 
-    currentIsLetter = (c >= 65 && c <= 90) || (c >= 97 && c <= 122);
+    currentIsLetter = (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 
     if (prevIsLetter && !currentIsLetter) {
       words++;
     }
     
-    if (currentIsLetter) {
-      prevIsLetter = 1;
-    } else {
-      prevIsLetter = 0;
-    }
+    prevIsLetter = currentIsLetter ? 1 : 0;
   }
 
   printf("Total number of words: %d\n", words);
